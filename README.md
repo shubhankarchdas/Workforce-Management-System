@@ -171,7 +171,7 @@ Custom permissions implemented using DRF BasePermission.
 
 - Relational integrity maintained
 
-## 🧪 Getting Started (Local Setup)
+## ⚙️ Getting Started (Local Setup)
   ### 1️⃣ Clone the Repository
         https://github.com/shubhankarchdas/Workforce-Management-System.git
         cd Workforce Management System
