@@ -136,6 +136,19 @@ Custom permissions implemented using DRF BasePermission.
         PUT  /api/task/update/<id>/
 
 
+## 🛢 DB Schema Diagram
+
+
+## 🗄️ Database
+
+- PostgreSQL as primary database
+
+- Secure credentials via .env
+
+- Proper migrations applied
+
+- Relational integrity maintained
+
 ## ⚡ Caching Strategy
 
 - Attendance list cached per project
@@ -161,15 +174,6 @@ Custom permissions implemented using DRF BasePermission.
 
 - Cache invalidation tested manually via API calls  
 
-## 🗄️ Database
-
-- PostgreSQL as primary database
-
-- Secure credentials via .env
-
-- Proper migrations applied
-
-- Relational integrity maintained
 
 ## ⚙️ Getting Started (Local Setup)
   ### 1️⃣ Clone the Repository
