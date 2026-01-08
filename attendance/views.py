@@ -1,8 +1,11 @@
+from employees.permissions import IsOwnerOrManager
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import CreateAPIView, ListAPIView, UpdateAPIView, DestroyAPIView
 from .models import Attendance
 from .serializers import AttendanceSerializer
 
 class AttendanceCreateView(CreateAPIView):
+    permission_classes = [IsAuthenticated, IsOwnerOrManager]
     queryset = Attendance.objects.all()
     serializer_class = AttendanceSerializer
 

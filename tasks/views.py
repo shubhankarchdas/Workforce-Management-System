@@ -1,8 +1,11 @@
+from employees.permissions import IsOwnerOrManager
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import CreateAPIView, ListAPIView, UpdateAPIView
 from .models import Task
 from .serializers import TaskSerializer
 
 class TaskCreateView(CreateAPIView):
+    permission_classes = [IsAuthenticated, IsOwnerOrManager]
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
 
