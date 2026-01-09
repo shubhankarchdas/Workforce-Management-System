@@ -9,6 +9,18 @@
   <img src="https://img.shields.io/badge/API%20Testing-Postman-orange?style=for-the-badge" />
 </p>
 
+## 📘 README Including
+
+<p align="center">
+  <img src="DB Schema Diagram/Readme.png" alt="DB Schema Diagram" width="100%" />
+</p>
+
+**Quick Visit:**
+- [Architecture Explanation](#architecture)
+- [Setup Steps](#setup)
+- [API Usage](#api-usage)
+- [DB Schema Diagram](#db-schema)
+
 
 ---
 
@@ -35,7 +47,7 @@ It is designed with clean architecture, JWT authentication, role-based permissio
 | **Backend**   | Python, Django, Django REST Framework, PostgreSQL, JWT Authentication, Django Cache (LocMem / Redis ready), Postman (API Testing)                               |
 
 
-
+<a id="architecture"></a>
 ## 🧱 Architecture
 
 - Modular Django apps
@@ -105,6 +117,7 @@ Custom permissions implemented using DRF BasePermission.
 
 ✔ Cache invalidation on data changes
 
+<a id="api-usage"></a>
 ## 🚀 API Endpoints
 
 ### Auth
@@ -136,6 +149,7 @@ Custom permissions implemented using DRF BasePermission.
         PUT  /api/task/update/<id>/
 
 
+<a id="db-schema"></a>
 ## 🛢 DB Schema Diagram
 
 A simple database schema diagram was created using **draw.io** to visualize entity relationships.
@@ -213,7 +227,7 @@ Fresh data returned after invalidation
 
 >Manually tested using repeated API calls and observing updated responses after mutations.
 
-
+<a id="setup"></a>
 ## ⚙️ Getting Started (Local Setup)
   ### 1️⃣ Clone the Repository
         https://github.com/shubhankarchdas/Workforce-Management-System.git
