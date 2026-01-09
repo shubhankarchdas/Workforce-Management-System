@@ -138,6 +138,11 @@ Custom permissions implemented using DRF BasePermission.
 
 ## 🛢 DB Schema Diagram
 
+A simple database schema diagram was created using **draw.io** to visualize entity relationships.
+
+<p align="center">
+  <img src="DB Schema Diagram/WMS Diagram.drawio (1).png" alt="DB Schema Diagram" width="100%" />
+</p>
 
 ## 🗄️ Database
 
@@ -166,13 +171,47 @@ Custom permissions implemented using DRF BasePermission.
     - Delete
 
 ## 🧪 Testing
-- Model-level validations
+### ✅ Model Tests
 
-- Business rule enforcement
+Tested database constraints (example: unique attendance per project per date)
 
-- Permission-based access testing
+Verified invalid duplicate entries raise errors
 
-- Cache invalidation tested manually via API calls  
+> How tested:
+
+> Using Django TestCase to assert model behavior and 
+
+### ✅ API Tests
+
+Tested API creation and response codes
+
+Verified JWT authentication is required
+
+>How tested:
+
+>Using APITestCase to send authenticated requests and validate responses (201, 403, etc.)
+
+### ✅ Permission Tests
+
+Verified members cannot create projects
+
+Verified managers and owners can create allowed resources
+
+>How tested:
+
+>Role-based users were created and API calls were validated to return 403 Forbidden when access was denied.
+
+### ✅ Cache Invalidation Tests
+
+Attendance list was cached on first request
+
+Cache was invalidated after create/update/delete
+
+Fresh data returned after invalidation
+
+>How tested:
+
+>Manually tested using repeated API calls and observing updated responses after mutations.
 
 
 ## ⚙️ Getting Started (Local Setup)
@@ -214,4 +253,33 @@ Custom permissions implemented using DRF BasePermission.
         python manage.py runserver
 
 
+## 📚 API Documentation (Swagger)
 
+>Swagger UI available at:
+
+        http://127.0.0.1:8000/swagger/
+
+
+>ReDoc available at:
+
+        http://127.0.0.1:8000/redoc/
+
+## 🎤 Interview Summary (Short)
+
+“I built a Django REST backend with JWT authentication, role-based permissions, PostgreSQL, caching for attendance optimization, proper testing, and Swagger documentation. All business rules are enforced at serializer and model level.”
+
+## ⭐ Future Enhancements
+
+- Redis for distributed caching
+
+- Celery for async task processing
+
+- Docker for containerization
+
+- Pagination and filtering
+
+- Rate limiting
+
+## 📄 License
+
+Developed as part of a backend hiring assignment for evaluation purposes.

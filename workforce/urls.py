@@ -4,6 +4,8 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework.permissions import AllowAny
+from .views import home
+
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -16,6 +18,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    path('', home),
     path('admin/', admin.site.urls),
 
     path('api/token/', TokenObtainPairView.as_view()),
